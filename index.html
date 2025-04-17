@@ -1,44 +1,67 @@
-<script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
-<style>
-  #webchat .bpWebchat {
-    position: unset;
-    width: 100%;
-    height: 100%;
-    max-height: 100%;
-    max-width: 100%;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scot's Virtual Assistant</title>
 
-  #webchat .bpFab {
-    display: none;
-  }
-</style>
+  <!-- Botpress Chat Script -->
+  <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
 
-<!-- Put this on your page BEFORE the script below -->
-<div id="webchat" style="width: 500px; height: 500px;"></div>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: inter, sans-serif;
+    }
 
-<!-- In your <body> tag -->
-<script>
-  window.botpress.on("webchat:ready", () => {
-    window.botpress.open();
-  });
-  window.botpress.init({
-  "botId": "80fe3196-8d33-4884-b14f-f13a2874ba74",
-  "configuration": {
-    "botName": "Scot's Virtual Assistant",
-    "botDescription": "A chatbot designed to help clients, interested buyers/sellers, and real estate enthusiasts.",
-    "website": {},
-    "email": {},
-    "phone": {},
-    "termsOfService": {},
-    "privacyPolicy": {},
-    "color": "#3B82F6",
-    "variant": "solid",
-    "themeMode": "light",
-    "fontFamily": "inter",
-    "radius": 1
-  },
-  "clientId": "803deb2f-2f51-4d1d-b18a-7ede651aa13b",
-  "selector": "#webchat"
-});
-</script>
+    #webchat {
+      width: 100%;
+      height: 100vh;
+    }
+
+    #webchat .bpWebchat {
+      position: unset;
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      max-width: 100%;
+    }
+
+    #webchat .bpFab {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Chatbot Container -->
+  <div id="webchat"></div>
+
+  <!-- Init Botpress Chat -->
+  <script>
+    window.botpress.on("webchat:ready", () => {
+      window.botpress.open();
+    });
+
+    window.botpress.init({
+      "botId": "80fe3196-8d33-4884-b14f-f13a2874ba74",
+      "clientId": "803deb2f-2f51-4d1d-b18a-7ede651aa13b",
+      "selector": "#webchat",
+      "configuration": {
+        "botName": "Scot's Virtual Assistant",
+        "botDescription": "A chatbot designed to help clients, interested buyers/sellers, and real estate enthusiasts.",
+        "color": "#3B82F6",
+        "variant": "solid",
+        "themeMode": "light",
+        "fontFamily": "inter",
+        "radius": 1
+      }
+    });
+  </script>
+
+</body>
+</html>
+
 
