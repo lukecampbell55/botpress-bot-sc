@@ -4,21 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scot's Virtual Assistant</title>
-
-  <!-- Botpress Chat Script -->
+  <!-- Botpress Webchat Loader -->
   <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
-
   <style>
     body, html {
       height: 100%;
       margin: 0;
       padding: 0;
       font-family: inter, sans-serif;
-    }
-
-    #webchat {
-      width: 100%;
-      height: 100vh;
     }
 
     #webchat .bpWebchat {
@@ -35,33 +28,31 @@
   </style>
 </head>
 <body>
+  <!-- Webchat container -->
+  <div id="webchat" style="width: 100%; height: 100%;"></div>
 
-  <!-- Chatbot Container -->
-  <div id="webchat"></div>
-
-  <!-- Init Botpress Chat -->
   <script>
     window.botpress.on("webchat:ready", () => {
       window.botpress.open();
     });
 
     window.botpress.init({
-      "botId": "80fe3196-8d33-4884-b14f-f13a2874ba74",
-      "clientId": "803deb2f-2f51-4d1d-b18a-7ede651aa13b",
-      "selector": "#webchat",
-      "configuration": {
-        "botName": "Scot's Virtual Assistant",
-        "botDescription": "A chatbot designed to help clients, interested buyers/sellers, and real estate enthusiasts.",
-        "color": "#3B82F6",
-        "variant": "solid",
-        "themeMode": "light",
-        "fontFamily": "inter",
-        "radius": 1
+      botId: "80fe3196-8d33-4884-b14f-f13a2874ba74",
+      clientId: "803deb2f-2f51-4d1d-b18a-7ede651aa13b",
+      selector: "#webchat",
+      configuration: {
+        botName: "Scot's Virtual Assistant",
+        botDescription: "A chatbot designed to help clients, interested buyers/sellers, and real estate enthusiasts.",
+        color: "#3B82F6",
+        variant: "solid",
+        themeMode: "light",
+        fontFamily: "inter",
+        radius: 1
       }
     });
   </script>
-
 </body>
 </html>
+
 
 
